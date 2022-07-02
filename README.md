@@ -18,3 +18,7 @@ Water is used to carry out activities such as dehydration, cleaning and food pro
 * Trihalomethanes: Amount of Trihalomethanes in μg/L.
 * Turbidity: Measure of light emiting property of water in NTU.
 * Potability: Indicates if water is safe for human consumption. Potable = 1 and Not potable = 0
+
+## Result
+To determine water potability, I am able to sort out 5 classifiers based on their accuracy on the testing data. These 5 selected classifiers are further tuned and 4 of them were used to build a voting classifier that can achieve an accuracy of 68.19% on the testing data.    
+To determine water pH categories, SVC is chosen as it returned the highest accuracy as compared to other models. To interpret the model's prediction, an explainable AI technique, SHAP was used.    
