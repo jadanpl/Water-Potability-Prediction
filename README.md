@@ -1,1 +1,1 @@
-# Water-Potability-Water-pH-Categories-Prediction
+# Water Potability & Water pH Categories Prediction
