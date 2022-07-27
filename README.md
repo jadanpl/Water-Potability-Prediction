@@ -20,5 +20,10 @@ Water is used to carry out activities such as dehydration, cleaning and food pro
 * Potability: Indicates if water is safe for human consumption. Potable = 1 and Not potable = 0
 
 ## Result
-To determine water potability, I am able to sort out 5 classifiers based on their accuracy on the testing data. These 5 selected classifiers are further tuned and 4 of them were used to build a voting classifier that can achieve an accuracy of 68.19% on the testing data.    
-To determine water pH categories, SVC is chosen as it returned the highest accuracy as compared to other models. To interpret the model's prediction, an explainable AI technique, SHAP was used.    
+1. To determine water potability, I am able to sort out 5 classifiers based on their accuracy on the testing data and further tune these 5 selected classifiers. After that, 4 of these tuned classifiers (XGB, random forest, extra trees and SVC) were used to build a voting classifier that can achieve an accuracy of 68.19% on the testing data. This is higher than the accuracy than any other models built.
+2. To determine water pH categories, SVC is chosen as it returned the highest accuracy n the testing data as compared to other models. To interpret the model's prediction, an explainable AI technique, SHAP was used.    
+
+## Recommendations
+* There is many other algorithms that could be tried out with this dataset, such as CatBoost Classifier and Light Gradient Boosting Machine.
+* Tune the 5 selected individual models with different hyperparameters.
+
