@@ -8,7 +8,7 @@ Water is used to carry out activities such as dehydration, cleaning and food pro
 
 ## Dataset Descriptions
 🌟The dataset is provided by <a href="https://www.kaggle.com/datasets/adityakadiwal/water-potability">Aditya Kadiwal on Kaggle</a>.
-* ph: pH of 1. water (0 to 14).
+* ph:  Water pH level (0 to 14).
 * Hardness: Capacity of water to precipitate soap in mg/L.
 * Solids: Total dissolved solids in ppm.
 * Chloramines: Amount of Chloramines in ppm.
