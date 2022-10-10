@@ -2,7 +2,7 @@
 ## Problem Statement
 Water is used to carry out activities such as dehydration, cleaning and food production. Well-mainteained water resources can boost countries’ economic growth (to be used in production or agriculture activities) and can reduce poverty rate. In contrast, contaminated water are often associated with the transmission of diseases such as cholera, diarrhoea, and hepatitis A. Lack of clean water resources could put both the patients and health care workers at additional risk of being infected by viruses.
 
-## Main Objectives
+## Main Objective
 * Predict if each water sample is potable or not potable. (Binary Classification)
 
 ## Dataset Descriptions
@@ -23,6 +23,6 @@ Water is used to carry out activities such as dehydration, cleaning and food pro
 2. To determine water pH categories, SVC is chosen as it returned the highest accuracy n the testing data as compared to other models. To interpret the model's prediction, an explainable AI technique, SHAP was used.    
 
 ## Recommendations
-* There is many other algorithms that could be tried out with this dataset, such as CatBoost Classifier and Light Gradient Boosting Machine.
+* There are many other algorithms that could be tried out with this dataset, such as CatBoost Classifier and Light Gradient Boosting Machine.
 * Tune the 5 selected individual models with different hyperparameters.
 
