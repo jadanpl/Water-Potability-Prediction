@@ -1,5 +1,6 @@
-streamlit==0.68.1
 sklearn==0.0
 pandas==0.25.3
-numpy==1.18.1
-
+sklearn==0.0
+scikit-learn==1.1.1
+scikit-learn-intelex==2021.20220215.102710
+streamlit==1.9.0
