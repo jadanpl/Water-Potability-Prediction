@@ -21,7 +21,7 @@ To predict if each water sample is potable or not potable. (Binary Classificatio
 * Potability: Indicates if water is safe for human consumption. Potable = 1 and Not potable = 0
 
 ## Result
-* 5 classifiers were sorted out based on their accuracy on the testing data. They are then further tuned. After that, 3 of these tuned classifiers (random forest, extra trees and SVC) were used to build a voting classifier that can achieve an accuracy of 69.11% on the testing data. This accuracy is higher than the accuracy than any other models built.
+* 5 classifiers were sorted out based on their accuracy on the testing data. They are then further tuned. After that, 3 of these tuned classifiers (random forest, extra trees and SVC) were used to build a voting classifier that can achieve an accuracy of 69.11% on the testing data. This accuracy is higher than the accuracy of any other models built.
 * The final model is deployed and is accessible on Streamlit. 
 
 ## Recommendations
