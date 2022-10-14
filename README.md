@@ -1,13 +1,13 @@
-# Water Potability Prediction
+# Water Potability Prediction 💦💧
 Click to <a href="https://jadanpl-water-potability-prediction-app-uwz1ya.streamlitapp.com/" target="_blank"><img src="https://camo.githubusercontent.com/767be70c92254555bd347ab07908fec67854c2264b77702581bd230fd7eac54f/68747470733a2f2f7374617469632e73747265616d6c69742e696f2f6261646765732f73747265616d6c69745f62616467655f626c61636b5f77686974652e737667"></a> and interact with the application. 🥂
 
 ## Problem Statement
 Water is used to carry out activities such as dehydration, cleaning and food production. Well-mainteained water resources can boost countries’ economic growth (to be used in production or agriculture activities) and can reduce poverty rate. In contrast, contaminated water are often associated with the transmission of diseases such as cholera, diarrhoea, and hepatitis A. Lack of clean water resources could put both the patients and health care workers at additional risk of being infected by viruses.
 
-## Main Objective
+## Main Objective 
 To predict if each water sample is potable or not potable. (Binary Classification)
 
-## Dataset Descriptions
+## Dataset Descriptions 
 🌟The dataset is provided by <a href="https://www.kaggle.com/datasets/adityakadiwal/water-potability">Aditya Kadiwal on Kaggle</a>.
 * ph:  Water pH level (0 to 14).
 * Hardness: Capacity of water to precipitate soap in mg/L.
