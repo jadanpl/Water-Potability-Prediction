@@ -1,12 +1,14 @@
 # import libraries
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
-from sklearn.model_selection import train_test_split
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestClassifier as RF
 from sklearn.ensemble import ExtraTreesClassifier as ET
 from sklearn.svm import SVC
 from sklearn.ensemble import VotingClassifier
 import pickle
+import bz2
 
 # read dataset
 wq_df = pd.read_csv("https://raw.githubusercontent.com/jadanpl/Water-Potability-Prediction/main/water_potability.csv")
@@ -20,11 +22,8 @@ wq_df['trihalomethanes'] = wq_df['trihalomethanes'].fillna(wq_df['trihalomethane
 # Create training and testing sets
 X = wq_df[['ph', 'hardness', 'solids', 'chloramines', 'sulfate']]
 Y = wq_df['potability']
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.25, random_state=42)
-scaler = MinMaxScaler()
-scaler.fit(X_train)
-X_train = scaler.transform(X_train)
-X_test = scaler.transform(X_test)
+trans = ColumnTransformer(transformers=[("num", MinMaxScaler(), ['ph', 'hardness', 'solids', 'chloramines', 'sulfate'])],
+                          remainder='passthrough')
 
 # model building
 final_rf = RF(class_weight='balanced', max_depth=25, max_features=1,
@@ -32,10 +31,13 @@ final_rf = RF(class_weight='balanced', max_depth=25, max_features=1,
 final_etree = ET(class_weight='balanced', max_depth=30, max_features=3,
                  min_samples_leaf=3, random_state=42)
 final_svc = SVC(C=1000, class_weight='balanced', gamma=1, probability=True, random_state=42)
-final_model = VotingClassifier(estimators = [('RF',final_rf), ('ET',final_etree), ('SVC',final_svc)],
-                         voting = 'soft')
-final_model.fit(X,Y)
-# final_model.predict()
+voting_clf = VotingClassifier(estimators=[('RF', final_rf), ('ET', final_etree), ('SVC', final_svc)],
+                              voting='soft')
+final_model = Pipeline(steps=[("trans", trans), ("voting_clf", voting_clf)])
+final_model.fit(X, Y)
 
 # Saving the model
-pickle.dump(final_model, open('voting_clf.pkl', 'wb'))
+# pickle.dump(final_model, open('voting_clf.pkl', 'wb')) # file size too large
+
+# Saving zipped model
+pickle.dump(final_model, bz2.BZ2File("voting_clf",'wb'))
